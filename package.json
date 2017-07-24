@@ -16,10 +16,15 @@
     "browser-sync-webpack-plugin": "^1.2.0",
     "css-loader": "^0.28.4",
     "extract-text-webpack-plugin": "^3.0.0",
+    "graceful-fs": "^4.1.11",
     "less": "^2.7.2",
     "less-loader": "^4.0.5",
     "style-loader": "^0.18.2",
+    "uglifyjs-webpack-plugin": "^0.4.6",
     "webpack": "^3.3.0",
     "webpack-dev-server": "^2.5.1"
+  },
+  "devDependencies": {
+    "nyan-progress-webpack-plugin": "^1.2.0"
   }
 }

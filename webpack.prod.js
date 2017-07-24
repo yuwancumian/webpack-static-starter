@@ -3,16 +3,18 @@ const webpack = require('webpack');
 
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const NyanProgressPlugin = require('nyan-progress-webpack-plugin');
 
 module.exports = {
     entry: [
-        'webpack-dev-server/client?http://localhost:8080/',
         './src/script/index.js'
     ],
     output:{
         path: path.join(__dirname, 'static'),
         filename: 'bundle.js',
-        publicPath: 'static/'
+        publicPath: 'static/',
+        libraryTarget: 'umd'
     },
     module: {
         rules: [{
@@ -25,17 +27,8 @@ module.exports = {
         }]
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoEmitOnErrorsPlugin(),
         new ExtractTextPlugin('style.css'),
-        new BrowserSyncPlugin({
-            // browse to http://localhost:3000/ during development,
-            // ./public directory is being served
-            host: 'localhost',
-            port: 3000,
-            proxy: "localhost:8080",
-            notify: false,
-            files: "*.html"
-        })
+        new UglifyJSPlugin(),
+        new NyanProgressPlugin()  
     ]
 }
