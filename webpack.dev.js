@@ -19,12 +19,11 @@ config.forEach(v=>{
 module.exports = {
     entry: [
         'webpack-dev-server/client?http://localhost:8080/',
-        './src/script/index.js',
-        './src/page2/app2.js'
+        './src/script/index.js'
     ],
     output:{
         path: __dirname,
-        filename: '[name].js',
+        filename: 'bundle.js',
         publicPath: '/',
         libraryTarget: 'umd'
     },
