@@ -1,2 +1,3 @@
-require('../style/index.less')
-document.write('hello again!')
+require("../style/index.less");
+
+document.write("hello world!");
